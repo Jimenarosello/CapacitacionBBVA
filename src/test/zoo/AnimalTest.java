@@ -1,4 +1,4 @@
-package test.farm;
+package test.zoo;
 
 import main.zoo.Canary;
 import main.zoo.Cow;
@@ -6,7 +6,7 @@ import main.zoo.Dog;
 import main.zoo.Penguin;
 import main.zoo.Platypus;
 
-public class AnimalsTest {
+public class AnimalTest {
 
     public static void main(String[] args) {
 
