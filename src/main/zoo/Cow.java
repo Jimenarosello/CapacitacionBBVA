@@ -1,13 +1,13 @@
-package main.granja;
+package main.zoo;
 
-public class Cow {
+public class Cow extends Mammal {
 
     private String name;
     private int age;
     private float weight;
 
     // Constructor
-    public Cow(String name, int age, float weight) {
+    /*public Cow(String name, int age, float weight) {
         this.name = name;
         this.age = age;
         if (weight > 5) {
@@ -15,7 +15,7 @@ public class Cow {
         } else {
             throw new RuntimeException("El peso no puede ser menor a 5");
         }
-    }
+    }*/
 
     public String callByName(String name) {
         String response;
@@ -27,12 +27,17 @@ public class Cow {
         return response;
     }
 
-    public String eat() {
-        return "Estoy comiendo pasto";
-    }
-
     public String weigh() {
         return String.format("Peso %s kilos", weight);
     }
 
+    @Override
+    public void produceSound() {
+        System.out.println("Moooo");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Estoy comiendo pasto");
+    }
 }
