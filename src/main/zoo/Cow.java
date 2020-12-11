@@ -40,4 +40,8 @@ public class Cow extends Mammal {
     public void eat() {
         System.out.println("Estoy comiendo pasto");
     }
+
+    public static void staticMethodExample() {
+        System.out.println("Soy un metodo estatico");
+    }
 }
