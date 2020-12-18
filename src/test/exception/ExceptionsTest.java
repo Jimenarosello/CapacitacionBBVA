@@ -4,17 +4,34 @@ import main.exception.AgeMismatchException;
 import main.exception.InvalidAgeException;
 import main.exception.InvalidNameException;
 import main.exception.Person;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class ExceptionsTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void whenNameAndAgeAreOK_thenCreatePerson()
+            throws InvalidAgeException, InvalidNameException, AgeMismatchException {
+        Person person = new Person("Pepito", 20, 2000);
+        Assert.assertEquals("Pepito", person.getName());
+    }
 
-        try {
-            Person person = new Person("Pepito", 20, 2000);
-            System.out.println("Soy " + person.getName());
-        } catch (InvalidNameException | InvalidAgeException | AgeMismatchException exception) {
-            System.out.println(exception.getMessage());
-        }
+    @Test(expected = InvalidNameException.class)
+    public void whenNameIsEmpty_thenThrowException()
+            throws InvalidAgeException, InvalidNameException, AgeMismatchException {
+        new Person("", 20, 2000);
+    }
+
+    @Test(expected = InvalidAgeException.class)
+    public void whenAgeIsInvalid_thenThrowException()
+            throws InvalidAgeException, InvalidNameException, AgeMismatchException {
+        new Person("Pepito", -5, 2000);
+    }
+
+    @Test(expected = AgeMismatchException.class)
+    public void whenAgeDoesntMachYear_thenThrowException()
+            throws InvalidAgeException, InvalidNameException, AgeMismatchException {
+        new Person("Pepito", 20, 2010);
     }
 
 }
