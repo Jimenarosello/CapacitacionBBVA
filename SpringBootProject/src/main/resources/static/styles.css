@@ -1,0 +1,21 @@
+body {
+    background-color: #93cdea;
+    color: #006ce0;
+    font-family: 'Trebuchet MS';
+    font-size: 1.5em;
+}
+
+#icon {
+    border-color: #006ce0;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 4px;
+    float: left;
+    margin: 1em;
+    vertical-align: middle;
+    width: 3em;
+}
+
+#message, #icon {
+    display: inline-block;
+}
